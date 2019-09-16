@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+    <style>
+        body {
+            margin:auto;
+            padding:50px 10px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .serif {
+            font-family: 'Lora', serif;
+        }
+        .sans-serif {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        /* choose a light or dark theme to add to the body tag. */
+        .dark-theme {
+            background-color: #151515;
+            color: #fbfbfb;
+        }
+        .light-theme {
+            background-color: white;
+            color: black;
+        }
+
+        .header {
+            padding-top:20px;
+            padding-bottom:20px;
+        }
+
+        .story-body, .header, .chart-section, .footer {
+            margin:auto;
+            max-width: 700px;
+        }
+
+        .footer {
+            padding-top:20px;
+            padding-bottom:20px;
+        }
+
+        .chart-section.wide{
+            width:100%;
+            max-width:1200px;
+        }
+
+        .chart-section.wide p.chart-title {
+            width:100%;
+            max-width:700px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        .chart-section.wide p.chart-subhead {
+            width:100%;
+            max-width:700px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+
+
+        /* text styles */
+
+        p.kicker {
+            font-size:1rem;
+            text-transform:uppercase;
+        }
+
+        .text-center {
+            text-align:center;
+        }
+
+        h1.headline {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 0.25rem;
+            margin-top: 1rem;
+            font-weight: 800;
+        }
+
+        h2.subhead {
+            font-size: 1.4rem;
+            line-height: 2rem;
+            margin-bottom:0;
+            margin-top: 15px;
+            font-weight: 400;
+        }
+
+        p.body-text {
+            font-size: 1.1rem;
+            line-height: 1.4;
+            margin-top:0;
+            margin-bottom:15px;
+        }
+
+        h3.section-head {
+            font-size:2rem;
+            margin:40px 0 10px 0;
+            font-weight:700;
+            line-height:1.3;
+        }
+
+        .byline {
+            font-size: 1.1rem;
+            line-height: 0.75;
+            margin-top: 1.5rem;
+            font-weight: 500;
+        }
+
+        .date {
+            font-size: 0.85rem;
+            line-height: 1;
+            margin-top: 10px;
+            font-weight:400;
+            text-transform:uppercase;
+            letter-spacing:0.5px;
+        }
+
+
+        p.note {
+            font-size:0.85rem;
+        }
+
+        /* chart styles */
+
+        .chart-section {
+            width:100%;
+            max-width:1200px;
+            padding:20px 0px;
+        }
+
+        .story-body .chart-section {
+            padding-top:0px;
+        }
+
+
+        .chart-row {
+            display:flex;
+            justify-content: space-between;
+            margin-top:20px;
+        }
+
+        p.chart-title {
+            font-size:1.3rem;
+            font-weight:700;
+            max-width:700px;
+            margin:0px auto 5px auto;
+        }
+        p.chart-subhead {
+            margin:0 auto;
+            max-width:700px;
+            font-size:1rem;
+            margin-bottom:15px;
+        }
+
+        p.chart-label {
+            margin:0 0 5px 0;
+            font-size:0.85rem;
+            text-transform:uppercase;
+            font-weight:600;
+        }
+
+        .chart-row .chart {
+            width:100%;
+            padding-right:15px;
+            min-width:calc(25% - 15px);
+
+        }
+
+
+
+        p.chart-source {
+            font-size:0.85rem;
+            margin:0;
+        }
+
+
+
+
+
+        /* photos */
+
+        .photo-section {
+            padding:30px 0px;
+            width:100%;
+            margin:auto;
+            display:flex;
+            max-width:1200px;
+        }
+
+        .photo {
+            width:100%;
+            padding-right:15px;
+        }
+        .photo img {
+            width:100%;	
+        }
+
+        p.caption {
+            font-size:0.9rem;
+            margin:0;
+        }
+
+
+
+        /* mobile */
+
+        @media (max-width:700px) {
+
+            .chart-row {
+                display:block;
+            }
+
+            .chart-row .chart {
+                padding:0;
+            }
+
+            .photo-section {
+                display:block;
+            }
+            .photo {
+                padding:0;
+            }
+
+        }
+
+        #g-templates-laptop, #g-templates-medium, #g-templates-mobile {
+            display: none;
+        }
+
+        @media (max-width: 490px) {
+            #g-templates-mobile {
+                display: block;
+            }
+        }
+
+        @media (min-width: 490px) and (max-width: 620px) {
+            #g-templates-laptop {
+                display: block;
+            }
+        }
+
+        @media (min-width: 620px)  {
+            #g-templates-medium {
+                display: block;
+            }
+        }
+
+    </style>
+    
+    <!-- google fonts: Open Sans (sans-serif) and Lora (serif) -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700&display=swap" rel="stylesheet">
+      
+    <title>This is your title</title>
+  </head>
+
+  <body class="light-theme"> <!-- all of the content on your html page goes inside the body -->
+
+    <div class="header">
+      <p class="kicker">Everything down here is made up from FiveThirtyEight maps</p>
+      <h1 class="headline">How Maryland’s Congressional election will look like without gerrymandering
+
+    </h1>
+     
+      <p class="byline">Chikezie Omeje</p>
+      <p class="date">Published September 15, 2019</p>
+    </div>
+
+    <div class="story-body">
+      <p class="body-text serif">After the Supreme Court ruled in June that the federal courts lack jurisdiction to decide on partisan gerrymandering, the concern now is how to resolve the bickering over redistricting which gives a party controlling a state undue advantage.</p>
+      <p class="body-text serif">Over the years, both Democratic and Republican parties have engaged in gerrymandering, a practice in which state legislators redraw political districts often to win more congressional seats.</p>
+      <p class="body-text serif">In Maryland where the Democrats have clear dominance in seven out of the eight Congressional districts, redrawing the districts without partisan gerrymandering will reduce their dominance to just three districts, leaving the remaining five to be highly competitive for both parties. The map below is the current composition of the districts.</p> 
+    </div>
+
+    <div class="chart-section">
+        <div class="chart-row">
+          <div class="chart">
+
+
+
+
+            <!--- PASTE YOUR AI2HTML AFTER THIS LINE -->
+<!-- Generated by ai2html v0.94.0 - 2019-09-15 19:42 -->
+<!-- ai file: current.ai -->
+<style media="screen,print">
+	#g-current-box ,
+	#g-current-box .g-artboard {
+		margin:0 auto;
+	}
+	#g-current-box p {
+		margin:0;
+	}
+	#g-current-box .g-aiAbs {
+		position:absolute;
+	}
+	#g-current-box .g-aiImg {
+		position:absolute;
+		top:0;
+		display:block;
+		width:100% !important;
+	}
+	#g-current-box .g-aiSymbol {
+		position: absolute;
+		box-sizing: border-box;
+	}
+	#g-current-box .g-aiPointText p { white-space: nowrap; }
+	#g-current-Artboard_1 {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-current-Artboard_1 p {
+		font-family:arial,helvetica,sans-serif;
+		font-size:22px;
+		line-height:26px;
+		height:auto;
+		filter:alpha(opacity=100);
+		-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+		opacity:1;
+		letter-spacing:0em;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		position:static;
+	}
+	#g-current-Artboard_1 .g-pstyle0 {
+		font-size:14px;
+		line-height:17px;
+		height:17px;
+	}
+	#g-current-Artboard_1 .g-pstyle1 {
+		height:26px;
+	}
+	#g-current-Artboard_1 .g-pstyle2 {
+		font-size:9px;
+		line-height:11px;
+		height:11px;
+		color:rgb(0,255,0);
+	}
+	#g-current-Artboard_1 .g-pstyle3 {
+		font-size:9px;
+		line-height:11px;
+		height:11px;
+		color:rgb(255,255,255);
+	}
+	#g-current-Artboard_1 .g-pstyle4 {
+		font-size:9px;
+		line-height:11px;
+		height:11px;
+		color:rgb(51,51,51);
+	}
+	#g-current-Artboard_1 .g-pstyle5 {
+		font-size:9px;
+		line-height:11px;
+		height:11px;
+	}
+	#g-current-Artboard_2 {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-current-Artboard_2 p {
+		font-family:arial,helvetica,sans-serif;
+		font-size:22px;
+		line-height:26px;
+		height:auto;
+		filter:alpha(opacity=100);
+		-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+		opacity:1;
+		letter-spacing:0em;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		position:static;
+	}
+	#g-current-Artboard_2 .g-pstyle0 {
+		height:26px;
+	}
+	#g-current-Artboard_2 .g-pstyle1 {
+		font-size:10px;
+		line-height:12px;
+		height:12px;
+		color:rgb(0,255,0);
+	}
+	#g-current-Artboard_2 .g-pstyle2 {
+		font-size:10px;
+		line-height:12px;
+		height:12px;
+		color:rgb(255,255,255);
+	}
+	#g-current-Artboard_2 .g-pstyle3 {
+		font-size:14px;
+		line-height:17px;
+		height:17px;
+	}
+	#g-current-Artboard_3 {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-current-Artboard_3 p {
+		font-family:arial,helvetica,sans-serif;
+		font-size:15px;
+		line-height:18px;
+		height:auto;
+		filter:alpha(opacity=100);
+		-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+		opacity:1;
+		letter-spacing:0em;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		position:static;
+	}
+	#g-current-Artboard_3 .g-pstyle0 {
+		font-size:10px;
+		line-height:13px;
+		height:13px;
+		color:rgb(0,255,0);
+	}
+	#g-current-Artboard_3 .g-pstyle1 {
+		font-size:10px;
+		line-height:13px;
+		height:13px;
+		color:rgb(255,255,255);
+	}
+	#g-current-Artboard_3 .g-pstyle2 {
+		height:18px;
+	}
+
+</style>
+
+<div id="g-current-box" class="ai2html">
+
+	<!-- Artboard: Artboard_1 -->
+	<div id="g-current-Artboard_1" class="g-artboard" style="width:800px; height:400px;" data-aspect-ratio="2" data-min-width="800">
+<div style=""></div>
+		<img id="g-current-Artboard_1-img" class="g-aiImg" alt="" src="current-Artboard_1.png"/>
+		<div id="g-ai0-1" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:1.9548%;margin-top:-9.8px;left:84.9896%;width:94px;">
+			<p class="g-pstyle0">Democrat</p>
+		</div>
+		<div id="g-ai0-2" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:5.9304%;margin-top:-14.7px;left:1.0238%;width:520px;">
+			<p class="g-pstyle1">Congressional Districts of Maryland based on party&rsquo;s dominance  </p>
+		</div>
+		<div id="g-ai0-3" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:5.4548%;margin-top:-9.8px;left:84.9896%;width:105px;">
+			<p class="g-pstyle0">Republican</p>
+		</div>
+		<div id="g-ai0-4" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:8.9548%;margin-top:-9.8px;left:84.9896%;width:110px;">
+			<p class="g-pstyle0">Competitive</p>
+		</div>
+		<div id="g-ai0-5" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:34.6365%;margin-top:-6.5px;left:60.7719%;width:69px;">
+			<p class="g-pstyle2">Baltimore</p>
+		</div>
+		<div id="g-ai0-6" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:34.6365%;margin-top:-6.5px;left:60.7719%;width:69px;">
+			<p class="g-pstyle3">Baltimore</p>
+		</div>
+		<div id="g-ai0-7" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:34.6365%;margin-top:-6.5px;left:60.7719%;width:69px;">
+			<p class="g-pstyle4">Baltimore</p>
+		</div>
+		<div id="g-ai0-8" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:50.3865%;margin-top:-6.5px;left:63.6163%;width:71px;">
+			<p class="g-pstyle2">Annapolis</p>
+		</div>
+		<div id="g-ai0-9" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:50.3865%;margin-top:-6.5px;left:63.6163%;width:71px;">
+			<p class="g-pstyle3">Annapolis</p>
+		</div>
+		<div id="g-ai0-10" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:50.3865%;margin-top:-6.5px;left:63.6163%;width:71px;">
+			<p class="g-pstyle5">Annapolis</p>
+		</div>
+	</div>
+
+	<!-- Artboard: Artboard_2 -->
+	<div id="g-current-Artboard_2" class="g-artboard" style="width:500px; height:419px;" data-aspect-ratio="1.193" data-min-width="500" data-max-width="799">
+<div style=""></div>
+		<img id="g-current-Artboard_2-img" class="g-aiImg" alt="" src="current-Artboard_2.png"/>
+		<div id="g-ai1-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.2611%;margin-top:-15px;left:2.6925%;width:338px;">
+			<p class="g-pstyle0">Current Congressional Districts of Maryland   </p>
+		</div>
+		<div id="g-ai1-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:32.4636%;margin-top:-7px;left:61.0772%;width:51px;">
+			<p class="g-pstyle1">Baltimore</p>
+		</div>
+		<div id="g-ai1-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:32.4636%;margin-top:-7px;left:61.0772%;width:51px;">
+			<p class="g-pstyle2">Baltimore</p>
+		</div>
+		<div id="g-ai1-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:48.9314%;margin-top:-7px;left:63.936%;width:53px;">
+			<p class="g-pstyle1">Annapolis</p>
+		</div>
+		<div id="g-ai1-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:48.9314%;margin-top:-7px;left:63.936%;width:53px;">
+			<p class="g-pstyle2">Annapolis</p>
+		</div>
+		<div id="g-ai1-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:49.4106%;margin-top:-10px;left:11.1134%;width:88px;">
+			<p class="g-pstyle3">Democrat</p>
+		</div>
+		<div id="g-ai1-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:52.7519%;margin-top:-10px;left:11.1134%;width:98px;">
+			<p class="g-pstyle3">Republican</p>
+		</div>
+		<div id="g-ai1-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:56.0931%;margin-top:-10px;left:11.1134%;width:102px;">
+			<p class="g-pstyle3">Competitive</p>
+		</div>
+	</div>
+
+	<!-- Artboard: Artboard_3 -->
+	<div id="g-current-Artboard_3" class="g-artboard" style="max-width: 243px;max-height: 403px" data-aspect-ratio="0.603" data-min-width="0" data-max-width="499">
+<div style="padding: 0 0 165.8436% 0;"></div>
+		<img id="g-current-Artboard_3-img" class="g-aiImg" alt="" src="current-Artboard_3.png"/>
+		<div id="g-ai2-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:27.7164%;margin-top:-7.7px;left:60.4364%;width:36px;">
+			<p class="g-pstyle0">Baltimore</p>
+		</div>
+		<div id="g-ai2-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:27.7164%;margin-top:-7.7px;left:60.4364%;width:36px;">
+			<p class="g-pstyle1">Baltimore</p>
+		</div>
+		<div id="g-ai2-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:45.3343%;margin-top:-7.7px;left:63.3421%;width:37px;">
+			<p class="g-pstyle0">Annapolis</p>
+		</div>
+		<div id="g-ai2-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:45.3343%;margin-top:-7.7px;left:63.3421%;width:37px;">
+			<p class="g-pstyle1">Annapolis</p>
+		</div>
+		<div id="g-ai2-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:45.9748%;margin-top:-10.3px;left:9.6501%;width:54px;">
+			<p class="g-pstyle2">Democrat</p>
+		</div>
+		<div id="g-ai2-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:49.4487%;margin-top:-10.3px;left:9.6501%;width:59px;">
+			<p class="g-pstyle2">Republican</p>
+		</div>
+		<div id="g-ai2-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:53.1708%;margin-top:-10.3px;left:9.6501%;width:62px;">
+			<p class="g-pstyle2">Competitive</p>
+		</div>
+	</div>
+
+</div>
+
+<!-- End ai2html - 2019-09-15 19:42 -->
+
+
+
+
+
+        </div>
+        </div>
+    </div>
+
+    <div class="story-body">
+        <p class="body-text serif"></p>If the Congressional districts are redrawn to promote competitive election, five districts can be won by either of the party while Democrats still have complete edge in three districts. 
+        <p class="body-text serif">Here is how the Congressional districts will look like if competitive election is highly promoted.</p>
+    </div>
+      
+    <div class="chart-section">
+        <div class="chart-row">
+            <div class="chart">
+    
+                <!-- AI2HTML content goes here -->
+                <!-- Generated by ai2html v0.94.0 - 2019-09-15 20:22 -->
+<!-- ai file: future.ai -->
+<style media="screen,print">
+	#g-future-box ,
+	#g-future-box .g-artboard {
+		margin:0 auto;
+	}
+	#g-future-box p {
+		margin:0;
+	}
+	#g-future-box .g-aiAbs {
+		position:absolute;
+	}
+	#g-future-box .g-aiImg {
+		position:absolute;
+		top:0;
+		display:block;
+		width:100% !important;
+	}
+	#g-future-box .g-aiSymbol {
+		position: absolute;
+		box-sizing: border-box;
+	}
+	#g-future-box .g-aiPointText p { white-space: nowrap; }
+	#g-future-Artboard_1 {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-future-Artboard_1 p {
+		font-family:arial,helvetica,sans-serif;
+		font-weight:bold;
+		font-size:18px;
+		line-height:22px;
+		height:auto;
+		filter:alpha(opacity=100);
+		-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+		opacity:1;
+		letter-spacing:0em;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		position:static;
+	}
+	#g-future-Artboard_1 .g-pstyle0 {
+		height:22px;
+	}
+	#g-future-Artboard_1 .g-pstyle1 {
+		font-size:10px;
+		line-height:12px;
+		height:12px;
+		color:rgb(0,255,0);
+	}
+	#g-future-Artboard_1 .g-pstyle2 {
+		font-size:10px;
+		line-height:12px;
+		height:12px;
+		color:rgb(255,255,255);
+	}
+	#g-future-Artboard_1 .g-pstyle3 {
+		font-size:10px;
+		line-height:12px;
+		height:12px;
+	}
+	#g-future-Artboard_2 {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-future-Artboard_2 p {
+		font-family:arial,helvetica,sans-serif;
+		font-size:18px;
+		line-height:22px;
+		height:auto;
+		filter:alpha(opacity=100);
+		-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+		opacity:1;
+		letter-spacing:0em;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		position:static;
+	}
+	#g-future-Artboard_2 .g-pstyle0 {
+		font-size:12px;
+		line-height:14px;
+		height:14px;
+		color:rgb(0,255,0);
+	}
+	#g-future-Artboard_2 .g-pstyle1 {
+		font-size:12px;
+		line-height:14px;
+		height:14px;
+		color:rgb(255,255,255);
+	}
+	#g-future-Artboard_2 .g-pstyle2 {
+		font-weight:bold;
+		height:22px;
+	}
+	#g-future-Artboard_2 .g-pstyle3 {
+		height:22px;
+	}
+	#g-future-Artboard_3 {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-future-Artboard_3 p {
+		font-family:arial,helvetica,sans-serif;
+		font-size:19px;
+		line-height:23px;
+		height:auto;
+		filter:alpha(opacity=100);
+		-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+		opacity:1;
+		letter-spacing:0em;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		position:static;
+	}
+	#g-future-Artboard_3 .g-pstyle0 {
+		font-size:13px;
+		line-height:15px;
+		height:15px;
+		color:rgb(0,255,0);
+	}
+	#g-future-Artboard_3 .g-pstyle1 {
+		font-size:13px;
+		line-height:15px;
+		height:15px;
+		color:rgb(255,255,255);
+	}
+	#g-future-Artboard_3 .g-pstyle2 {
+		font-weight:bold;
+		height:23px;
+	}
+	#g-future-Artboard_3 .g-pstyle3 {
+		height:23px;
+	}
+
+</style>
+
+<div id="g-future-box" class="ai2html">
+
+	<!-- Artboard: Artboard_1 -->
+	<div id="g-future-Artboard_1" class="g-artboard" style="width:800px; height:434px;" data-aspect-ratio="1.843" data-min-width="800">
+<div style=""></div>
+		<img id="g-future-Artboard_1-img" class="g-aiImg" alt="" src="future-Artboard_1.png"/>
+		<div id="g-ai0-1" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:5.6787%;margin-top:-12.6px;left:86.3557%;width:117px;">
+			<p class="g-pstyle0">Competitive</p>
+		</div>
+		<div id="g-ai0-2" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:5.7856%;margin-top:-13.1px;left:1.4519%;width:484px;">
+			<p class="g-pstyle0">Promote competitive election without gerrymandering</p>
+		</div>
+		<div id="g-ai0-3" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:9.5958%;margin-top:-12.6px;left:86.3943%;width:100px;">
+			<p class="g-pstyle0">Democrat</p>
+		</div>
+		<div id="g-ai0-4" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:13.2824%;margin-top:-12.6px;left:86.4327%;width:112px;">
+			<p class="g-pstyle0">Republican</p>
+		</div>
+		<div id="g-ai0-5" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:33.4375%;margin-top:-7.1px;left:61.0778%;width:69px;">
+			<p class="g-pstyle1">Baltimore</p>
+		</div>
+		<div id="g-ai0-6" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:33.4375%;margin-top:-7.1px;left:61.0778%;width:69px;">
+			<p class="g-pstyle2">Baltimore</p>
+		</div>
+		<div id="g-ai0-7" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:33.4375%;margin-top:-7.1px;left:61.0778%;width:69px;">
+			<p class="g-pstyle3">Baltimore</p>
+		</div>
+		<div id="g-ai0-8" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:49.3361%;margin-top:-7.1px;left:63.9366%;width:71px;">
+			<p class="g-pstyle1">Annapolis</p>
+		</div>
+		<div id="g-ai0-9" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:49.3361%;margin-top:-7.1px;left:63.9366%;width:71px;">
+			<p class="g-pstyle2">Annapolis</p>
+		</div>
+		<div id="g-ai0-10" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:49.3361%;margin-top:-7.1px;left:63.9366%;width:71px;">
+			<p class="g-pstyle3">Annapolis</p>
+		</div>
+	</div>
+
+	<!-- Artboard: Artboard_2 -->
+	<div id="g-future-Artboard_2" class="g-artboard" style="width:472px; height:446.999999999998px;" data-aspect-ratio="1.056" data-min-width="472" data-max-width="799">
+<div style=""></div>
+		<img id="g-future-Artboard_2-img" class="g-aiImg" alt="" src="future-Artboard_2.png"/>
+		<div id="g-ai1-1" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:28.1499%;margin-top:-7.8px;left:60.9485%;width:50px;">
+			<p class="g-pstyle0">Baltimore</p>
+		</div>
+		<div id="g-ai1-2" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:28.1499%;margin-top:-7.8px;left:60.9485%;width:50px;">
+			<p class="g-pstyle1">Baltimore</p>
+		</div>
+		<div id="g-ai1-3" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:41.1878%;margin-top:-13.1px;left:6.0951%;width:198px;">
+			<p class="g-pstyle2">Competitive election</p>
+		</div>
+		<div id="g-ai1-4" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:45.5996%;margin-top:-7.8px;left:63.8012%;width:51px;">
+			<p class="g-pstyle0">Annapolis</p>
+		</div>
+		<div id="g-ai1-5" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:45.5996%;margin-top:-7.8px;left:63.8012%;width:51px;">
+			<p class="g-pstyle1">Annapolis</p>
+		</div>
+		<div id="g-ai1-6" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:59.6522%;margin-top:-12.6px;left:13.3148%;width:117px;">
+			<p class="g-pstyle3">Competitive</p>
+		</div>
+		<div id="g-ai1-7" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:63.4554%;margin-top:-12.6px;left:13.3801%;width:100px;">
+			<p class="g-pstyle3">Democrat</p>
+		</div>
+		<div id="g-ai1-8" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:67.0348%;margin-top:-12.6px;left:13.4453%;width:112px;">
+			<p class="g-pstyle3">Republican</p>
+		</div>
+	</div>
+
+	<!-- Artboard: Artboard_3 -->
+	<div id="g-future-Artboard_3" class="g-artboard" style="max-width: 256px;max-height: 478px" data-aspect-ratio="0.536" data-min-width="0" data-max-width="471">
+<div style="padding: 0 0 186.7188% 0;"></div>
+		<img id="g-future-Artboard_3-img" class="g-aiImg" alt="" src="future-Artboard_3.png"/>
+		<div id="g-ai2-1" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:27.2792%;margin-top:-8.4px;left:60.6005%;width:37px;">
+			<p class="g-pstyle0">Baltimore</p>
+		</div>
+		<div id="g-ai2-2" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:27.2792%;margin-top:-8.4px;left:60.6005%;width:37px;">
+			<p class="g-pstyle1">Baltimore</p>
+		</div>
+		<div id="g-ai2-3" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:44.8524%;margin-top:-8.4px;left:63.4369%;width:37px;">
+			<p class="g-pstyle0">Annapolis</p>
+		</div>
+		<div id="g-ai2-4" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:44.8524%;margin-top:-8.4px;left:63.4369%;width:37px;">
+			<p class="g-pstyle1">Annapolis</p>
+		</div>
+		<div id="g-ai2-5" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:47.7047%;margin-top:-14px;left:4.4975%;width:135px;">
+			<p class="g-pstyle2">Without gerrymandering</p>
+		</div>
+		<div id="g-ai2-6" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:59.1058%;margin-top:-13.5px;left:13.2387%;width:73px;">
+			<p class="g-pstyle3">Competitive</p>
+		</div>
+		<div id="g-ai2-7" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:63.0807%;margin-top:-13.5px;left:13.3038%;width:64px;">
+			<p class="g-pstyle3">Democrat</p>
+		</div>
+		<div id="g-ai2-8" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:66.6372%;margin-top:-13.5px;left:13.3684%;width:71px;">
+			<p class="g-pstyle3">Republican</p>
+		</div>
+	</div>
+
+</div>
+
+<!-- End ai2html - 2019-09-15 20:22 -->
+
+    
+            </div>
+        </div>
+    </div>
+
+
+  </body>
+</html>
+
+
+<script type="text/javascript">
+    (function() {
+        // only want one resizer on the page
+        if (document.documentElement.className.indexOf("g-resizer-v3-init") > -1) return;
+        document.documentElement.className += " g-resizer-v3-init";
+        // require IE9+
+        if (!("querySelector" in document)) return;
+        function resizer() {
+            var elements = Array.prototype.slice.call(document.querySelectorAll(".g-artboard[data-min-width]")),
+                widthById = {};
+            elements.forEach(function(el) {
+                var parent = el.parentNode,
+                    width = widthById[parent.id] || parent.getBoundingClientRect().width,
+                    minwidth = el.getAttribute("data-min-width"),
+                    maxwidth = el.getAttribute("data-max-width");
+                widthById[parent.id] = width;
+                if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+                    el.style.display = "block";
+                } else {
+                    el.style.display = "none";
+                }
+            });
+            try {
+                if (window.parent && window.parent.$) {
+                    window.parent.$("body").trigger("resizedcontent", [window]);
+                }
+                if (window.require) {
+                    require(['foundation/main'], function() {
+                        require(['shared/interactive/instances/app-communicator'], function(AppCommunicator) {
+                            AppCommunicator.triggerResize();
+                        });
+                    });
+                }
+            } catch(e) { console.log(e); }
+        }
+        document.addEventListener('DOMContentLoaded', resizer);
+        // feel free to replace throttle with _.throttle, if available
+        window.addEventListener('resize', throttle(resizer, 200));        
+        function throttle(func, wait) {
+            // from underscore.js
+            var _now = Date.now || function() { return new Date().getTime(); },
+                context, args, result, timeout = null, previous = 0;
+            var later = function() {
+                previous = _now();
+                timeout = null;
+                result = func.apply(context, args);
+                if (!timeout) context = args = null;
+            };
+            return function() {
+                var now = _now(), remaining = wait - (now - previous);
+                context = this;
+                args = arguments;
+                if (remaining <= 0 || remaining > wait) {
+                    if (timeout) {
+                        clearTimeout(timeout);
+                        timeout = null;
+                    }
+                    previous = now;
+                    result = func.apply(context, args);
+                    if (!timeout) context = args = null;
+                } else if (!timeout && options.trailing !== false) {
+                    timeout = setTimeout(later, remaining);
+                }
+                return result;
+            };
+        }
+       
+    })();
+</script>
